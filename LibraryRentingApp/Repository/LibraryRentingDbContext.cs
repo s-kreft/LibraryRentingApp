@@ -12,10 +12,5 @@ namespace LibraryRentingApp.Repository
         {
 
         }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=library_renting; Integrated Security=true");
-        //}
     }
 }

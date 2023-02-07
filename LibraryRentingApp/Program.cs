@@ -1,8 +1,9 @@
-using LibraryRentingApp.Services;
-using LibraryRentingApp.Repository;
-using LibraryRentingApp.Models;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
+global using LibraryRentingApp.Controllers;
+global using LibraryRentingApp.Services;
+global using LibraryRentingApp.Repository;
+global using LibraryRentingApp.Models;
+global using Microsoft.EntityFrameworkCore;
+global using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
