@@ -85,3 +85,5 @@ C:\Projects\C#\LibraryRentingApp\LibraryRentingApp\obj\Debug\net6.0\refint\Libra
 C:\Projects\C#\LibraryRentingApp\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.pdb
 C:\Projects\C#\LibraryRentingApp\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.genruntimeconfig.cache
 C:\Projects\C#\LibraryRentingApp\LibraryRentingApp\obj\Debug\net6.0\ref\LibraryRentingApp.dll
+C:\Projects\C#\LibraryRentingApp\LibraryRentingApp\bin\Debug\net6.0\MySqlConnector.dll
+C:\Projects\C#\LibraryRentingApp\LibraryRentingApp\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
