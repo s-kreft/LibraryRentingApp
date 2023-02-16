@@ -9,16 +9,22 @@ namespace LibraryRentingApp.Controllers
     [ApiController]
     public class LibraryRentingController : Controller
     {
-        private LibraryRentingService _libraryRentingService;
-        public LibraryRentingController(LibraryRentingService libraryRentingService)
+        private ILibraryRentingService _libraryRentingService;
+
+        public LibraryRentingController(ILibraryRentingService libraryRentingService)
         {
-            _libraryRentingService= libraryRentingService;
+            _libraryRentingService = libraryRentingService;
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostBookToDb(Book inputBook)
+        public async Task PostBookToDb(Book inputBook)
         {
-            return _libraryRentingService.AddBookToDb(inputBook) ;
+            _libraryRentingService.AddBookToDb(inputBook) ;
+        }
+        [HttpGet]
+        public async Task GetBookFromDb(string bookTitle)
+        {
+            _libraryRentingService.GetBookFromDb(bookTitle);
         }
     }
 }

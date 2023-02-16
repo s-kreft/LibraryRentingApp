@@ -1,5 +1,6 @@
 ﻿using LibraryRentingApp.Models;
 using LibraryRentingApp.Repository;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryRentingApp.Services
 {
@@ -19,6 +20,13 @@ namespace LibraryRentingApp.Services
         public void AddBookToDb(Book book)
         {
             _dbContext.Add(book);
+            _dbContext.SaveChanges();
+        }
+
+        public Book GetBookFromDb(string bookTitle)
+        {
+            var bookFromDb = _dbContext.books.FirstOrDefault(b => b.Title == bookTitle);
+            return bookFromDb;
         }
 
     }

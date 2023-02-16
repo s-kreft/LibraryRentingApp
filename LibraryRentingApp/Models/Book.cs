@@ -11,9 +11,12 @@ namespace LibraryRentingApp.Models
         public string Description { get; set; } = null!;
         public string Author { get; set; } = null!;
   
-        public Book()
+        public Book(int id, string title, string description, string author)
         {
-
+            Id = id;
+            Title = title;
+            Description = description;  
+            Author = author;
         }
     }
 }

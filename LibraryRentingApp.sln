@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryRentingApp", "LibraryRentingApp\LibraryRentingApp.csproj", "{38670C14-825D-41E6-A6AE-81B7B5EB4A0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryRentingAppTests", "TestProject1\LibraryRentingAppTests.csproj", "{48C8C17A-AD32-49AA-A113-7C4C1AAFB6B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{38670C14-825D-41E6-A6AE-81B7B5EB4A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38670C14-825D-41E6-A6AE-81B7B5EB4A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38670C14-825D-41E6-A6AE-81B7B5EB4A0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48C8C17A-AD32-49AA-A113-7C4C1AAFB6B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48C8C17A-AD32-49AA-A113-7C4C1AAFB6B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48C8C17A-AD32-49AA-A113-7C4C1AAFB6B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48C8C17A-AD32-49AA-A113-7C4C1AAFB6B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
