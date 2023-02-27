@@ -29,5 +29,12 @@ namespace LibraryRentingApp.Services
             return bookFromDb;
         }
 
+        public void DeleteBookFromDb(string bookTitle)
+        {
+            var bookToDelete = _dbContext.books.FirstOrDefault(b => b.Title == bookTitle);
+            _dbContext.Remove(bookToDelete);
+            _dbContext.SaveChanges();
+        }
+
     }
 }

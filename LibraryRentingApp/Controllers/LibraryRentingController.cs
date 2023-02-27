@@ -26,5 +26,11 @@ namespace LibraryRentingApp.Controllers
         {
             _libraryRentingService.GetBookFromDb(bookTitle);
         }
+
+        [HttpDelete]
+        public async Task DeleteBookFromDb(string bookTitle)
+        {
+            _libraryRentingService.DeleteBookFromDb(bookTitle);
+        }
     }
 }
