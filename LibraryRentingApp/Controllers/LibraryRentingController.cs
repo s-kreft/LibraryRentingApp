@@ -19,12 +19,16 @@ namespace LibraryRentingApp.Controllers
         [HttpPost]
         public async Task PostBookToDb(Book inputBook)
         {
-            _libraryRentingService.AddBookToDb(inputBook) ;
+            _libraryRentingService.AddBookToDb(inputBook);
         }
-        [HttpGet]
-        public async Task GetBookFromDb(string bookTitle)
+
+        [HttpGet("{bookTitle}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Book))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult GetBookFromDb(string bookTitle)
         {
-            _libraryRentingService.GetBookFromDb(bookTitle);
+            var book = _libraryRentingService.GetBookFromDb(bookTitle);
+            return book == null ? NotFound() : Ok(book);
         }
 
         [HttpDelete]

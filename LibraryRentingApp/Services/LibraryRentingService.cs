@@ -1,6 +1,7 @@
 ﻿using LibraryRentingApp.Models;
 using LibraryRentingApp.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace LibraryRentingApp.Services
 {
@@ -23,10 +24,15 @@ namespace LibraryRentingApp.Services
             _dbContext.SaveChanges();
         }
 
-        public Book GetBookFromDb(string bookTitle)
+        public String GetBookFromDb(string bookTitle)
         {
+
             var bookFromDb = _dbContext.books.FirstOrDefault(b => b.Title == bookTitle);
-            return bookFromDb;
+            var json = JsonConvert.SerializeObject(bookFromDb);
+            return json;
+            //string testVariable = "test";
+            //return testVariable;
+
         }
 
         public void DeleteBookFromDb(string bookTitle)

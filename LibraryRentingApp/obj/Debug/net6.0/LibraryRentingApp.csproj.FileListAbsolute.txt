@@ -87,3 +87,4 @@ C:\Projects\C#\LibraryRentingApp\LibraryRentingApp\obj\Debug\net6.0\LibraryRenti
 C:\Projects\C#\LibraryRentingApp\LibraryRentingApp\obj\Debug\net6.0\ref\LibraryRentingApp.dll
 C:\Projects\C#\LibraryRentingApp\LibraryRentingApp\bin\Debug\net6.0\MySqlConnector.dll
 C:\Projects\C#\LibraryRentingApp\LibraryRentingApp\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Projects\C#\LibraryRentingApp\LibraryRentingApp\bin\Debug\net6.0\Newtonsoft.Json.dll

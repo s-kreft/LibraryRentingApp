@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bah8j14a/0JhCs+toSY33JbM5Dz8yY4+hKHngFuWidj/0igDeSM+u7FtciHc0+Uve+fGxvbdPI767Jg7P8Ycew==",
+  "dgSpecHash": "buxx6XRFIet95mC7TZFnFF91Dy7iSj9IQer9xpEH4bqnWWmvFIHVx5CPr8P2IiymxYi/jnZdfpMDZrbUY7gcpA==",
   "success": true,
   "projectFilePath": "C:\\Projects\\C#\\LibraryRentingApp\\LibraryRentingApp\\LibraryRentingApp.csproj",
   "expectedPackageFiles": [
@@ -45,6 +45,7 @@
     "C:\\Users\\Kapal\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Kapal\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Kapal\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512",
+    "C:\\Users\\Kapal\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Kapal\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0\\pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
     "C:\\Users\\Kapal\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Kapal\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
