@@ -39,10 +39,26 @@ namespace LibraryRentingApp.Controllers
             return book == null ? NotFound() : Ok(book);
         }
 
-        [HttpDelete]
-        public async Task DeleteBookFromDb(string bookTitle)
+        [HttpDelete("{bookTitle}")]
+        public IActionResult DeleteBookFromDb(string bookTitle)
         {
-            _libraryRentingService.DeleteBookFromDb(bookTitle);
+            var bookFromDb = _libraryRentingService.GetBookFromDb(bookTitle);
+
+            try
+            {
+                if(bookFromDb == null) 
+                {
+                    return NotFound();
+                }
+                _libraryRentingService.DeleteBookFromDb(bookTitle);
+
+                return NoContent();
+            }
+            catch (Exception ex) 
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
     }
 }

@@ -30,9 +30,6 @@ namespace LibraryRentingApp.Services
             var bookFromDb = _dbContext.books.FirstOrDefault(b => b.Title == bookTitle);
             var json = JsonConvert.SerializeObject(bookFromDb);
             return json;
-            //string testVariable = "test";
-            //return testVariable;
-
         }
 
         public void DeleteBookFromDb(string bookTitle)
