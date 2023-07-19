@@ -17,9 +17,17 @@ namespace LibraryRentingApp.Controllers
         }
 
         [HttpPost]
-        public async Task PostBookToDb(Book inputBook)
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult PostBookToDb(Book inputBook)
         {
+            if(inputBook.Title== null || inputBook.Author == null || inputBook.Description == null)
+            {
+                return BadRequest("Title, author name and description are mandatory");
+            }
             _libraryRentingService.AddBookToDb(inputBook);
+
+            return CreatedAtAction(nameof(GetBookFromDb), new { name = inputBook.Title }, inputBook);
         }
 
         [HttpGet("{bookTitle}")]
