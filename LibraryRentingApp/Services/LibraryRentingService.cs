@@ -32,6 +32,11 @@ namespace LibraryRentingApp.Services
             return json;
         }
 
+        public void UpdateBookInDb(Book book) 
+        {
+
+        }
+
         public void DeleteBookFromDb(string bookTitle)
         {
             var bookToDelete = _dbContext.books.FirstOrDefault(b => b.Title == bookTitle);

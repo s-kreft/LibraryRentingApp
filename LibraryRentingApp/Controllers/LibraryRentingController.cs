@@ -27,7 +27,7 @@ namespace LibraryRentingApp.Controllers
             }
             _libraryRentingService.AddBookToDb(inputBook);
 
-            return CreatedAtAction(nameof(GetBookFromDb), new { name = inputBook.Title }, inputBook);
+            return CreatedAtAction(nameof(PostBookToDb), new { name = inputBook.Title }, inputBook);
         }
 
         [HttpGet("{bookTitle}")]
@@ -38,6 +38,8 @@ namespace LibraryRentingApp.Controllers
             var book = _libraryRentingService.GetBookFromDb(bookTitle);
             return book == null ? NotFound() : Ok(book);
         }
+
+
 
         [HttpDelete("{bookTitle}")]
         public IActionResult DeleteBookFromDb(string bookTitle)
