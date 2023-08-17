@@ -21,7 +21,7 @@ namespace LibraryRentingApp.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult PostBookToDb(Book inputBook)
         {
-            if(inputBook.Title== null || inputBook.Author == null || inputBook.Description == null)
+            if(inputBook.Title == null || inputBook.Author == null || inputBook.Description == null)
             {
                 return BadRequest("Title, author name and description are mandatory");
             }
@@ -30,7 +30,7 @@ namespace LibraryRentingApp.Controllers
             return CreatedAtAction(nameof(PostBookToDb), new { name = inputBook.Title }, inputBook);
         }
 
-        [HttpGet("{bookTitle}")]
+        [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Book))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetBookFromDb(string bookTitle)
@@ -41,7 +41,7 @@ namespace LibraryRentingApp.Controllers
 
 
 
-        [HttpDelete("{bookTitle}")]
+        [HttpDelete]
         public IActionResult DeleteBookFromDb(string bookTitle)
         {
             var bookFromDb = _libraryRentingService.GetBookFromDb(bookTitle);
