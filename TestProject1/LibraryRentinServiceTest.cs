@@ -2,6 +2,7 @@
 using LibraryRentingApp.Controllers;
 using LibraryRentingApp.Models;
 using Xunit;
+using Moq;
 
 namespace TestProject1
 {
@@ -23,6 +24,10 @@ namespace TestProject1
 
         //}
         [Fact]
-        public void AddBookToDb_
+        public void AddBookToDb_()
+        {
+            var book = new Book("The Lord of the Rings", "Fantasy Novel", "J.R.R. Tolkien");
+            var mock = new Mock<Book>(book); 
+        }
     }
 }
