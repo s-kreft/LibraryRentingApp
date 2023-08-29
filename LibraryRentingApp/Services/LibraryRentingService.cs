@@ -18,18 +18,18 @@ namespace LibraryRentingApp.Services
             _dbContext.SaveChanges();
         }
 
-        public void AddBookToDb(Book book)
+        public async void AddBookToDb(Book book)
         {
             _dbContext.Add(book);
             _dbContext.SaveChanges();
         }
 
-        public String GetBookFromDb(string bookTitle)
+        public async IAsyncEnumerable<string>GetBookFromDb(string bookTitle)
         {
 
             var bookFromDb = _dbContext.books.FirstOrDefault(b => b.Title == bookTitle);
             var json = JsonConvert.SerializeObject(bookFromDb);
-            return json;
+            yield return json;
         }
 
         public void UpdateBookInDb(Book book) 
@@ -37,7 +37,7 @@ namespace LibraryRentingApp.Services
 
         }
 
-        public void DeleteBookFromDb(string bookTitle)
+        public async void DeleteBookFromDb(string bookTitle)
         {
             var bookToDelete = _dbContext.books.FirstOrDefault(b => b.Title == bookTitle);
             _dbContext.Remove(bookToDelete);

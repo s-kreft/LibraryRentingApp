@@ -2,6 +2,7 @@
 
 const context = [
     "/weatherforecast",
+    "/libraryrentingapp",
 ];
 
 module.exports = function (app) {

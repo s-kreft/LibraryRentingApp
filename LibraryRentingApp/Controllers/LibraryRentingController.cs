@@ -19,7 +19,7 @@ namespace LibraryRentingApp.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult PostBookToDb(Book inputBook)
+        public async Task<IActionResult> PostBookToDb(Book inputBook)
         {
             if(inputBook.Title == null || inputBook.Author == null || inputBook.Description == null)
             {
@@ -27,13 +27,13 @@ namespace LibraryRentingApp.Controllers
             }
             _libraryRentingService.AddBookToDb(inputBook);
 
-            return CreatedAtAction(nameof(PostBookToDb), new { name = inputBook.Title }, inputBook);
+           return  CreatedAtAction(nameof(PostBookToDb), new { name = inputBook.Title }, inputBook);
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Book))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult GetBookFromDb(string bookTitle)
+        public async Task<IActionResult> GetBookFromDb(string bookTitle)
         {
             var book = _libraryRentingService.GetBookFromDb(bookTitle);
             return book == null ? NotFound() : Ok(book);
@@ -42,7 +42,7 @@ namespace LibraryRentingApp.Controllers
 
 
         [HttpDelete]
-        public IActionResult DeleteBookFromDb(string bookTitle)
+        public async Task<IActionResult> DeleteBookFromDb(string bookTitle)
         {
             var bookFromDb = _libraryRentingService.GetBookFromDb(bookTitle);
 

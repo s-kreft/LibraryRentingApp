@@ -6,6 +6,6 @@ namespace LibraryRentingApp.Services
     {
         void AddBookToDb(Book book);
         void DeleteBookFromDb(string bookTitle);
-        String GetBookFromDb(string bookTitle);
+        IAsyncEnumerable<string> GetBookFromDb(string bookTitle);
     }
 }
