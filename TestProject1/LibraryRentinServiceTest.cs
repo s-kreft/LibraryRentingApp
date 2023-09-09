@@ -3,6 +3,8 @@ using LibraryRentingApp.Controllers;
 using LibraryRentingApp.Models;
 using Xunit;
 using Moq;
+using LibraryRentingApp.Services;
+using LibraryRentingApp.Repository;
 
 namespace TestProject1
 {
@@ -24,10 +26,23 @@ namespace TestProject1
 
         //}
         [Fact]
-        public void AddBookToDb_()
-        {
+        public void AddBookToDb_BookIsAddedToDb_BookSuccesfullyAdded()
+        {           
+            //Arrange
+          
+            var mock_dbContext = new Mock<LibraryRentingDbContext>();
+
             var book = new Book("The Lord of the Rings", "Fantasy Novel", "J.R.R. Tolkien");
-            var mock = new Mock<Book>(book); 
+
+            mock_dbContext.Setup(x => x.Add(It.IsAny<Book>()));
+
+            var sut_libraRyrntingService = new LibraryRentingService(mock_dbContext.Object);
+
+            //Act
+            sut_libraRyrntingService.AddBookToDb(book);
+
+            //Assert
+            mock_dbContext.Verify(x => x.Add(book), Times.Once);
         }
     }
 }
