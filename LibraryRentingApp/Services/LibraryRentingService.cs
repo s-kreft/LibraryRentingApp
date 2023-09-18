@@ -50,5 +50,12 @@ namespace LibraryRentingApp.Services
             _dbContext.SaveChanges();
         }
 
+        public async void DeleteCustomerFromDb(string customerName)
+        {
+            var customerToDelete = _dbContext.customers.FirstOrDefault(c => c.Name == customerName);
+            _dbContext.Remove(customerToDelete);
+            _dbContext.SaveChanges();
+        }
+
     }
 }

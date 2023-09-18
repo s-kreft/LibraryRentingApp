@@ -81,5 +81,11 @@ namespace LibraryRentingApp.Controllers
                 return CreatedAtAction(nameof(PostLibraryCustomerToDb), new { name = inputCustomer.Name }, inputCustomer);
             }          
         }
+        //[HttpDelete]
+        //public async Task<IActionResult> DeleteCustomerFromDb(string customerName)
+        //{
+        //    var customerFromDb = _libraryRentingService.
+        //    if()
+        //}
     }
 }
