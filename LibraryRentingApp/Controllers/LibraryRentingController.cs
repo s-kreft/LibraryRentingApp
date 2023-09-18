@@ -17,6 +17,7 @@ namespace LibraryRentingApp.Controllers
         }
 
         [HttpPost]
+        [Route("librarian/book")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PostBookToDb(Book inputBook)
@@ -31,6 +32,7 @@ namespace LibraryRentingApp.Controllers
         }
 
         [HttpGet]
+        [Route("librarian/book")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Book))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetBookFromDb(string bookTitle)
@@ -40,6 +42,7 @@ namespace LibraryRentingApp.Controllers
         }
 
         [HttpDelete]
+        [Route("librarian/book")]
         public async Task<IActionResult> DeleteBookFromDb(string bookTitle)
         {
             var bookFromDb = _libraryRentingService.GetBookFromDb(bookTitle);
@@ -62,6 +65,7 @@ namespace LibraryRentingApp.Controllers
         }
 
         [HttpPost]
+        [Route("librarian/customer")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PostLibraryCustomerToDb(Customer inputCustomer)
