@@ -92,11 +92,26 @@ namespace LibraryRentingApp.Controllers
             return customerFromDb == null ? NotFound() : Ok(customerFromDb);
         }
 
-        //[HttpDelete]
-        //public async Task<IActionResult> DeleteCustomerFromDb(string customerName)
-        //{
-        //    var customerFromDb = _libraryRentingService.
-        //    if()
-        //}
+        [HttpDelete]
+        [Route("librarian/customer")]
+        public async Task<IActionResult> DeleteCustomerFromDb(string customerName)
+        {
+            var customerFromDb = _libraryRentingService.GetCustomerFromDb(customerName);
+            
+            try
+            {
+                if(customerFromDb == null)
+                {
+                    return NotFound();
+                }
+                _libraryRentingService.DeleteCustomerFromDb(customerName);
+
+                return NoContent();
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
