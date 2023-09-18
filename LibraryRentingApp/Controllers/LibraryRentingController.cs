@@ -81,6 +81,17 @@ namespace LibraryRentingApp.Controllers
                 return CreatedAtAction(nameof(PostLibraryCustomerToDb), new { name = inputCustomer.Name }, inputCustomer);
             }          
         }
+        [HttpGet]
+        [Route("librarian/customer")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Customer))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetLibraryCustomerFromDb(string customerName)
+        {
+            var customerFromDb = _libraryRentingService.GetCustomerFromDb(customerName);
+
+            return customerFromDb == null ? NotFound() : Ok(customerFromDb);
+        }
+
         //[HttpDelete]
         //public async Task<IActionResult> DeleteCustomerFromDb(string customerName)
         //{
