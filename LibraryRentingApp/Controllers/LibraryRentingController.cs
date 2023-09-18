@@ -39,8 +39,6 @@ namespace LibraryRentingApp.Controllers
             return book == null ? NotFound() : Ok(book);
         }
 
-
-
         [HttpDelete]
         public async Task<IActionResult> DeleteBookFromDb(string bookTitle)
         {
@@ -61,6 +59,23 @@ namespace LibraryRentingApp.Controllers
                 return BadRequest(ex.Message);
             }
             
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> PostLibraryCustomerToDb(Customer inputCustomer)
+        {
+            if(inputCustomer.Name == null || inputCustomer.Address == null || inputCustomer.City == null)
+            {
+                return BadRequest("Customer name, city of living and adress are mandatory");
+            }
+            else
+            {
+                _libraryRentingService.AddNewLibraryCustomer(inputCustomer);
+
+                return CreatedAtAction(nameof(PostLibraryCustomerToDb), new { name = inputCustomer.Name }, inputCustomer);
+            }          
         }
     }
 }
