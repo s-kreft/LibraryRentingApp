@@ -2,6 +2,7 @@
 using LibraryRentingApp.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryRentingApp.Migrations
 {
     [DbContext(typeof(LibraryRentingDbContext))]
-    partial class LibraryRentingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230915134703_AddCustomerIdPropertyForBookClass")]
+    partial class AddCustomerIdPropertyForBookClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,7 +47,6 @@ namespace LibraryRentingApp.Migrations
                     b.HasIndex("CustomerId");
 
                     b.ToTable("books");
-
                 });
 
             modelBuilder.Entity("LibraryRentingApp.Models.Customer", b =>
@@ -68,7 +70,6 @@ namespace LibraryRentingApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("customers");
-
                 });
 
             modelBuilder.Entity("LibraryRentingApp.Models.Book", b =>

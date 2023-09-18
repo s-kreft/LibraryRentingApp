@@ -44,5 +44,11 @@ namespace LibraryRentingApp.Services
             _dbContext.SaveChanges();
         }
 
+        public async void AddNewLibraryCustomer(Customer customer)
+        {
+            _dbContext.Add(customer);
+            _dbContext.SaveChanges();
+        }
+
     }
 }
