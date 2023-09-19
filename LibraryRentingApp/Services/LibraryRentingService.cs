@@ -65,6 +65,8 @@ namespace LibraryRentingApp.Services
 
         public async void AddBookToLibraryCustomer(string customerName, string bookTitle)
         {
+            var customer = _dbContext.customers.FirstOrDefault(c => c.Name == customerName);
+
             IQueryable < Book > BookToCustomerQuerry =
                 from book in _dbContext.books
                 where book.Title == bookTitle
@@ -72,7 +74,7 @@ namespace LibraryRentingApp.Services
 
             foreach(Book book in BookToCustomerQuerry)
             {
-                book.CustomerId = _dbContext.customers.FirstOrDefault(c => c.Name == customerName).Id;
+                book.CustomerId = customer.Id;
             }
                 _dbContext.SaveChanges();
         }

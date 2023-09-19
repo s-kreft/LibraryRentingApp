@@ -13,7 +13,7 @@ namespace LibraryRentingApp.Models
         public string Description { get; set; } = null!;
         public string Author { get; set; } = null!;
         [ForeignKey("CustomerId")]
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
   
         public Book(string title, string description, string author)
         {
