@@ -74,7 +74,7 @@ namespace LibraryRentingApp.Services
             {
                 book.CustomerId = _dbContext.customers.FirstOrDefault(c => c.Name == customerName).Id;
             }
-           
+                _dbContext.SaveChanges();
         }
 
     }

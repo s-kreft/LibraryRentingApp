@@ -113,5 +113,13 @@ namespace LibraryRentingApp.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPost]
+        [Route("librarian/rent")]
+        public async Task<IActionResult> PostBookIntoCustomerRentedBooks(string customerName, string bookTitle)
+        {
+            _libraryRentingService.AddBookToLibraryCustomer(customerName, bookTitle);
+
+            return CreatedAtAction(nameof(PostBookIntoCustomerRentedBooks), new { name = customerName });
+        }
     }
 }
