@@ -63,5 +63,19 @@ namespace LibraryRentingApp.Services
             _dbContext.SaveChanges();
         }
 
+        public async void AddBookToLibraryCustomer(string customerName, string bookTitle)
+        {
+            IQueryable < Book > BookToCustomerQuerry =
+                from book in _dbContext.books
+                where book.Title == bookTitle
+                select book;
+
+            foreach(Book book in BookToCustomerQuerry)
+            {
+                book.CustomerId = _dbContext.customers.FirstOrDefault(c => c.Name == customerName).Id;
+            }
+           
+        }
+
     }
 }
