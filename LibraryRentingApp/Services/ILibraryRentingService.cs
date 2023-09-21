@@ -10,6 +10,7 @@ namespace LibraryRentingApp.Services
         void DeleteBookFromDb(string bookTitle);
         void DeleteCustomerFromDb(string customerName);
         IAsyncEnumerable<string> GetBookFromDb(string bookTitle);
+        IAsyncEnumerable<List<Book>> GetBooksRentedByCustomer(int customerId);
         IAsyncEnumerable<Customer> GetCustomerFromDb(string customerName);
     }
 }

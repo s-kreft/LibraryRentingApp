@@ -67,7 +67,7 @@ namespace LibraryRentingApp.Services
         {
             var customer = _dbContext.customers.FirstOrDefault(c => c.Name == customerName);
 
-            IQueryable < Book > BookToCustomerQuerry =
+            IQueryable<Book> BookToCustomerQuerry =
                 from book in _dbContext.books
                 where book.Title == bookTitle
                 select book;
@@ -79,5 +79,20 @@ namespace LibraryRentingApp.Services
                 _dbContext.SaveChanges();
         }
 
+        public async IAsyncEnumerable<List<Book>> GetBooksRentedByCustomer(int customerId)
+        {
+            var CustomerBookList= new List<Book>();
+
+            IQueryable<Book> CustomerRentedBooks =
+                from book in _dbContext.books
+                where book.CustomerId == customerId
+                select book;
+
+            foreach(Book book in CustomerRentedBooks)
+            { 
+                CustomerBookList.Add(book);
+            }
+            yield return CustomerBookList;
+        }
     }
 }
