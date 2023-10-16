@@ -24,10 +24,17 @@ namespace LibraryRentingApp.Services
             _dbContext.SaveChanges();
         }
 
-        public async IAsyncEnumerable<string>GetBookFromDb(string bookTitle)
+        //public async IAsyncEnumerable<string>GetBookFromDb(string bookTitle)
+        //{
+
+        //    var bookFromDb = _dbContext.books.FirstOrDefault(b => b.Title == bookTitle);
+        //    var json = JsonConvert.SerializeObject(bookFromDb);
+        //    yield return json;
+        //}
+        public async IAsyncEnumerable<string> GetBookFromDb(int bookId)
         {
 
-            var bookFromDb = _dbContext.books.FirstOrDefault(b => b.Title == bookTitle);
+            var bookFromDb = _dbContext.books.Find(bookId);
             var json = JsonConvert.SerializeObject(bookFromDb);
             yield return json;
         }
@@ -37,9 +44,9 @@ namespace LibraryRentingApp.Services
 
         }
 
-        public async void DeleteBookFromDb(string bookTitle)
+        public async void DeleteBookFromDb(int bookId)
         {
-            var bookToDelete = _dbContext.books.FirstOrDefault(b => b.Title == bookTitle);
+            var bookToDelete = _dbContext.books.Find(bookId);
             _dbContext.Remove(bookToDelete);
             _dbContext.SaveChanges();
         }
@@ -50,26 +57,26 @@ namespace LibraryRentingApp.Services
             _dbContext.SaveChanges();
         }
 
-        public async IAsyncEnumerable<Customer> GetCustomerFromDb(string customerName)
+        public async IAsyncEnumerable<Customer> GetCustomerFromDb(int customerId)
         {
-            var customerFromDb = _dbContext.customers.FirstOrDefault(c => c.Name.Equals(customerName));
+            var customerFromDb = _dbContext.customers.Find(customerId);
             yield return customerFromDb;
         }
 
-        public async void DeleteCustomerFromDb(string customerName)
+        public async void DeleteCustomerFromDb(int customerId)
         {
-            var customerToDelete = _dbContext.customers.FirstOrDefault(c => c.Name.Equals(customerName));
+            var customerToDelete = _dbContext.customers.Find(customerId);
             _dbContext.Remove(customerToDelete);
             _dbContext.SaveChanges();
         }
 
-        public async void AddBookToLibraryCustomer(string customerName, string bookTitle)
+        public async void AddBookToLibraryCustomer(int customerId, int bookId)
         {
-            var customer = _dbContext.customers.FirstOrDefault(c => c.Name == customerName);
+            var customer = _dbContext.customers.Find(customerId);
 
             IQueryable<Book> BookToCustomerQuerry =
                 from book in _dbContext.books
-                where book.Title == bookTitle
+                where book.Id == bookId
                 select book;
 
             foreach(Book book in BookToCustomerQuerry)

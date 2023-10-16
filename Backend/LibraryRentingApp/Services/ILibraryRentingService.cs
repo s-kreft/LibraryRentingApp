@@ -5,12 +5,12 @@ namespace LibraryRentingApp.Services
     public interface ILibraryRentingService
     {
         void AddBookToDb(Book book);
-        void AddBookToLibraryCustomer(string customerName, string bookTitle);
+        void AddBookToLibraryCustomer(int customerId, int bookId);
         void AddNewLibraryCustomer(Customer customer);
-        void DeleteBookFromDb(string bookTitle);
-        void DeleteCustomerFromDb(string customerName);
-        IAsyncEnumerable<string> GetBookFromDb(string bookTitle);
+        void DeleteBookFromDb(int bookId);
+        void DeleteCustomerFromDb(int customerId);
+        IAsyncEnumerable<string> GetBookFromDb(int bookId);
         IAsyncEnumerable<List<Book>> GetBooksRentedByCustomer(int customerId);
-        IAsyncEnumerable<Customer> GetCustomerFromDb(string customerName);
+        IAsyncEnumerable<Customer> GetCustomerFromDb(int customerId);
     }
 }

@@ -35,17 +35,17 @@ namespace LibraryRentingApp.Controllers
         [Route("librarian/book")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Book))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetBookFromDb(string bookTitle)
+        public async Task<IActionResult> GetBookFromDb(int bookId)
         {
-            var book = _libraryRentingService.GetBookFromDb(bookTitle);
+            var book = _libraryRentingService.GetBookFromDb(bookId);
             return book == null ? NotFound() : Ok(book);
         }
 
         [HttpDelete]
         [Route("librarian/book")]
-        public async Task<IActionResult> DeleteBookFromDb(string bookTitle)
+        public async Task<IActionResult> DeleteBookFromDb(int bookId)
         {
-            var bookFromDb = _libraryRentingService.GetBookFromDb(bookTitle);
+            var bookFromDb = _libraryRentingService.GetBookFromDb(bookId);
 
             try
             {
@@ -53,7 +53,7 @@ namespace LibraryRentingApp.Controllers
                 {
                     return NotFound();
                 }
-                _libraryRentingService.DeleteBookFromDb(bookTitle);
+                _libraryRentingService.DeleteBookFromDb(bookId);
 
                 return NoContent();
             }
@@ -85,18 +85,18 @@ namespace LibraryRentingApp.Controllers
         [Route("librarian/customer")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Customer))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetLibraryCustomerFromDb(string customerName)
+        public async Task<IActionResult> GetLibraryCustomerFromDb(int customerId)
         {
-            var customerFromDb = _libraryRentingService.GetCustomerFromDb(customerName);
+            var customerFromDb = _libraryRentingService.GetCustomerFromDb(customerId);
 
             return customerFromDb == null ? NotFound() : Ok(customerFromDb);
         }
 
         [HttpDelete]
         [Route("librarian/customer")]
-        public async Task<IActionResult> DeleteCustomerFromDb(string customerName)
+        public async Task<IActionResult> DeleteCustomerFromDb(int customerId)
         {
-            var customerFromDb = _libraryRentingService.GetCustomerFromDb(customerName);
+            var customerFromDb = _libraryRentingService.GetCustomerFromDb(customerId);
             
             try
             {
@@ -104,7 +104,7 @@ namespace LibraryRentingApp.Controllers
                 {
                     return NotFound();
                 }
-                _libraryRentingService.DeleteCustomerFromDb(customerName);
+                _libraryRentingService.DeleteCustomerFromDb(customerId);
 
                 return NoContent();
             }
@@ -116,11 +116,11 @@ namespace LibraryRentingApp.Controllers
 
         [HttpPost]
         [Route("librarian/rent")]
-        public async Task<IActionResult> PostBookIntoCustomerRentedBooks(string customerName, string bookTitle)
+        public async Task<IActionResult> PostBookIntoCustomerRentedBooks(int customerId, int bookId)
         {
-            _libraryRentingService.AddBookToLibraryCustomer(customerName, bookTitle);
+            _libraryRentingService.AddBookToLibraryCustomer(customerId, bookId);
 
-            return CreatedAtAction(nameof(PostBookIntoCustomerRentedBooks), new { name = customerName });
+            return CreatedAtAction(nameof(PostBookIntoCustomerRentedBooks), new { name = customerId });
         }
 
         [HttpGet]

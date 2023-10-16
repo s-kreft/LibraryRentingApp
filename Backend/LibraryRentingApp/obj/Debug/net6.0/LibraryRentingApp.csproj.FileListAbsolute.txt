@@ -182,3 +182,13 @@ C:\Projects\C#\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\scop
 C:\Projects\C#\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.csproj.CopyComplete
 C:\Projects\C#\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.genruntimeconfig.cache
 C:\Projects\C#\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\ref\LibraryRentingApp.dll
+C:\Projects\Csharp\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.csproj.AssemblyReference.cache
+C:\Projects\Csharp\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Csharp\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.AssemblyInfoInputs.cache
+C:\Projects\Csharp\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.AssemblyInfo.cs
+C:\Projects\Csharp\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.csproj.CoreCompileInputs.cache
+C:\Projects\Csharp\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Projects\Csharp\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\Csharp\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.dll
+C:\Projects\Csharp\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\refint\LibraryRentingApp.dll
+C:\Projects\Csharp\LibraryRentingApp\Backend\LibraryRentingApp\obj\Debug\net6.0\LibraryRentingApp.pdb

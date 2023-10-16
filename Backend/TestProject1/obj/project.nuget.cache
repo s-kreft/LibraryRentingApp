@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q7+K6FqJi+wkQ2FWMnCzlCb24EJBk0ypv6soQW04v8iTqVFJxr7qMdk3mUq1TKnaHIIDwFLJJehXLJH3NTAYjQ==",
+  "dgSpecHash": "6hmdsKLbPNd2so/SlmrsbGfgckGcCQUb483hF1sybpyu+TdVHyohKfuXOfoc6cFOiHG8fRebvyqFcssOQDdyGg==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\C#\\LibraryRentingApp\\Backend\\TestProject1\\LibraryRentingAppTests.csproj",
+  "projectFilePath": "C:\\Projects\\Csharp\\LibraryRentingApp\\Backend\\TestProject1\\LibraryRentingAppTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kapal\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Kapal\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
