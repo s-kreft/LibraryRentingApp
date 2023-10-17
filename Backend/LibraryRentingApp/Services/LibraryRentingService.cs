@@ -23,14 +23,6 @@ namespace LibraryRentingApp.Services
             _dbContext.Add(book);
             _dbContext.SaveChanges();
         }
-
-        //public async IAsyncEnumerable<string>GetBookFromDb(string bookTitle)
-        //{
-
-        //    var bookFromDb = _dbContext.books.FirstOrDefault(b => b.Title == bookTitle);
-        //    var json = JsonConvert.SerializeObject(bookFromDb);
-        //    yield return json;
-        //}
         public async IAsyncEnumerable<string> GetBookFromDb(int bookId)
         {
 
@@ -39,9 +31,14 @@ namespace LibraryRentingApp.Services
             yield return json;
         }
 
-        public void UpdateBookInDb(Book book) 
+        public void UpdateBookInDb(int bookId, Book book) 
         {
+            var bookFromDb = _dbContext.books.FirstOrDefault(b => b.Id == bookId);
+            bookFromDb.Author = book.Author;
+            bookFromDb.Description = book.Description;
+            bookFromDb.Title = book.Title;
 
+            _dbContext.SaveChanges();
         }
 
         public async void DeleteBookFromDb(int bookId)

@@ -5,6 +5,7 @@ namespace LibraryRentingApp.Services
     public interface ILibraryRentingService
     {
         void AddBookToDb(Book book);
+        void UpdateBookInDb(int bookId, Book book);
         void AddBookToLibraryCustomer(int customerId, int bookId);
         void AddNewLibraryCustomer(Customer customer);
         void DeleteBookFromDb(int bookId);

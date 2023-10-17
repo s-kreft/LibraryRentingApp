@@ -41,6 +41,14 @@ namespace LibraryRentingApp.Controllers
             return book == null ? NotFound() : Ok(book);
         }
 
+        [HttpPut]
+        [Route("librarian/book")]
+        public async Task<IActionResult> PutBookInDb(int bookId, Book inputBook)
+        {
+            _libraryRentingService.UpdateBookInDb(bookId, inputBook);
+            return CreatedAtAction(nameof(PutBookInDb), new { name = inputBook.Title }, inputBook);
+        }
+
         [HttpDelete]
         [Route("librarian/book")]
         public async Task<IActionResult> DeleteBookFromDb(int bookId)
